@@ -1,6 +1,7 @@
 #pragma once
 #define KLANG_VERSION_MAJOR 0
 #define KLANG_VERSION_MINOR 1
+#define KLANG_VERSION_PATCH 0
 
 #include <fstream>
 #include <iostream>
@@ -9,6 +10,8 @@
 #include <string>
 #include <string_view>
 #include <vector>
+
+#include "./Compiler.hpp"
 
 /**
  * @brief Program arguments.

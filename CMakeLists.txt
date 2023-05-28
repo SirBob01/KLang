@@ -9,7 +9,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED on)
 
 add_compile_options(-Wall -g -O3 -fPIC)
 
-file(GLOB_RECURSE INCLUDE "../src/*.hpp")
-file(GLOB_RECURSE SOURCES "../src/*.cpp")
+file(GLOB_RECURSE INCLUDE "./src/*.hpp")
+file(GLOB_RECURSE SOURCES "./src/*.cpp")
 
-add_executable(klang src/Klang.cpp ${SOURCES} ${INCLUDE})
+add_executable(klang ${SOURCES})

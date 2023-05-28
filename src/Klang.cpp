@@ -1,9 +1,18 @@
 #include "./Klang.hpp"
+#include "Compiler.hpp"
 
 void log_error(std::string error) { throw std::runtime_error(error); }
 
 void print_usage() {
-    log_error("Usage: klang -i <input_file> -o <output_file>");
+    char v_str[3 * (sizeof(unsigned) * 8 + 10)];
+    std::snprintf(v_str,
+                  sizeof(v_str),
+                  "%d.%d.%d",
+                  KLANG_VERSION_MAJOR,
+                  KLANG_VERSION_MINOR,
+                  KLANG_VERSION_PATCH);
+    log_error("KLang version " + std::string(v_str) +
+              "\nUsage: klang -i <input_file> -o <output_file>");
 }
 
 Args parse_args(int argc, char **argv) {
@@ -43,8 +52,9 @@ int main(int argc, char **argv) {
     try {
         Args args = parse_args(argc, argv);
 
-        // TODO: Run compiler arguments
-        std::string compiled;
+        // Run compiler
+        Klang::Compiler compiler(args.input);
+        std::string compiled = compiler.generate_target_code();
 
         // Write to output buffer
         if (args.output_file.length() > 0) {

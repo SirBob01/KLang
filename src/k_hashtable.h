@@ -1,22 +1,22 @@
 #ifndef K_HASHTABLE_H_
 #define K_HASHTABLE_H_
 
-#include <stdlib.h>
 #include <assert.h>
+#include <stdlib.h>
 
 #include "k_object.h"
 
 #define INITIAL_HASHTABLE_SIZE 13
-#define STATUS_FILLED (1 << 0)
-#define STATUS_DELETE (1 << 1)
-#define LOAD_FACTOR 0.75
+#define STATUS_FILLED          (1 << 0)
+#define STATUS_DELETE          (1 << 1)
+#define LOAD_FACTOR            0.75
 
 /**
  * A hashtable that maps immutable objects to other
  * kinds of objects using a hashing function. Collisions
  * are handled using open addressing.
  *
- * This is the core data structure behind the 
+ * This is the core data structure behind the
  * garbage collection mark-and-sweep algorithm.
  */
 typedef struct {
@@ -29,7 +29,6 @@ typedef struct {
     k_object_t *value;
     unsigned char status; // free or filled
 } k_hashcell_t;
-
 
 int is_prime(unsigned n);
 

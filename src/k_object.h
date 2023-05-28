@@ -7,7 +7,7 @@
 
 /**
  * Define the atomic data types.
- * More complex data structures can be 
+ * More complex data structures can be
  * built on top of this.
  */
 typedef enum {
@@ -30,7 +30,6 @@ typedef struct {
     size_t length;
     KObjectType type;
 } k_object_t;
-
 
 k_object_t *object_create(void *data, size_t length, KObjectType type);
 

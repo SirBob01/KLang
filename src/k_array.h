@@ -18,7 +18,6 @@ typedef struct {
     size_t max_length;
 } k_array_t;
 
-
 k_array_t *array_create();
 
 void array_destroy(k_array_t *array);

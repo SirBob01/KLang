@@ -1,2 +1,9 @@
 # KLang
-An interpreted programming language inspired by Python
+
+Compiler for KLang.
+
+## License
+
+Code and documentation Copyright (c) 2023 Keith Leonardo
+
+Code released under the [MIT License](https://choosealicense.com/licenses/mit/).

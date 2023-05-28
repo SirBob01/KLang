@@ -11,9 +11,10 @@ namespace Klang {
     enum class TokenType {
         Literal,     // String, number, boolean, etc.
         Identifier,  // Variable name, function name, etc.
-        Keyword,     // while, if, elif, else, etc.
-        Operator,    // +, -, *, /, %, etc.
-        Punctuation, // '(', ')', '{', '}', ',', etc.
+        Keyword,     // fn, while, if, elif, else, struct
+        Type,        // i32, u32, f32, f64, string, bool, etc.
+        Operator,    // =, +, -, *, /, %, etc.
+        Punctuation, // '(', ')', '{', '}', '[', ']', ',', etc.
     };
 
     /**
